@@ -29,14 +29,12 @@ public class LoginTest extends BaseTest {
         driver.findElement(By.id("pass")).sendKeys("987654321Test");
         driver.findElement(By.cssSelector("button[data-test='login-button']")).click();
 
-        // CAPTCHA adımı gelir, kullanıcıya bildirim verilir
+
         System.out.println("CAPTCHA'yı çöz ve devam et...");
 
-        // Kullanıcıya CAPTCHA'yı çözmesi için zaman veriyoruz.
-        Thread.sleep(20000); // 20 saniye bekleme
 
-//        boolean isLogoutDisplayed = driver.findElement(By.id("logoutButton")).isDisplayed();
-//        assertTrue(isLogoutDisplayed, "Logout button should be displayed after a successful login.");
+        Thread.sleep(20000);
+
         driver.quit();
     }
     @Test
@@ -73,11 +71,9 @@ public class LoginTest extends BaseTest {
         driver.findElement(By.cssSelector("label[for='rememberMe']")).click(); // "Beni Hatırla" seçeneğini işaretleme
         driver.findElement(By.cssSelector("button[data-test='login-button']")).click();
 
-        // CAPTCHA adımı gelir, kullanıcıya bildirim verilir
         System.out.println("CAPTCHA'yı çöz ve devam et...");
         Thread.sleep(20000); // Kullanıcıya CAPTCHA'yı çözmesi için zaman veriyoruz
 
-        // Tarayıcıyı kapatıyoruz
         driver.quit();
     }
 
