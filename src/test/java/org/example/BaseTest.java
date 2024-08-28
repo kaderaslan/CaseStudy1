@@ -13,17 +13,13 @@ public class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        // WebDriverManager ile FirefoxDriver'ı kuruyoruz
         WebDriverManager.firefoxdriver().setup();
 
-        // Firefox tarayıcısını başlatıyoruz
         driver = new FirefoxDriver();
 
-        // Timeout ve pencere ayarlarını yapıyoruz
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
-        // Kariyer.net giriş sayfasına gidiyoruz
         driver.get("https://www.kariyer.net/aday/giris");
     }
 
